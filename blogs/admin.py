@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Blog
+from .models import Category, Blog, Comment
 
 # Register your models here.
 
@@ -15,5 +15,10 @@ class BlogAdmin(admin.ModelAdmin):
     list_editable = ('status', 'is_featured')
 
 
+class CommentAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(Comment, CommentAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Blog, BlogAdmin)
